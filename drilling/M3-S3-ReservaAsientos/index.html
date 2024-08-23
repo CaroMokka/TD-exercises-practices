@@ -20,9 +20,6 @@
             <div class="col-6">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
-                        </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title fs-3 fw-bold">Asiento Normal</h5>
@@ -32,8 +29,8 @@
                                 <p><small>* Por la compra superior de 5 asientos, obten el 10% de dcto</small></p>
                                 <div class="mb-3">
                                     <label for="cantidad-asiento" class="form-label">Seleccione una cantidad:</label>
-                                    <input type="number" class="form-control cantidad-asiento">
-                                    <div id="emailHelp" class="form-text text-danger my-2"></div>
+                                    <input id type="number" class="form-control cantidad-asiento" min="1" step="1">
+                                    <div id="cantidad-help-normal" class="form-text text-danger my-2"></div>
                                     <a href="#" class="btn btn-primary btn-reservar" data-precio="5000" data-nombre="Normal">Reservar</a>
 
                                 </div>
@@ -43,9 +40,6 @@
                 </div>
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
-                        </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title fs-3 fw-bold">Asiento Preferencial</h5>
@@ -55,8 +49,8 @@
                                 <p><small>* Por la compra superior de 5 asientos, obten el 10% de dcto</small></p>
                                 <div class="mb-3">
                                     <label for="cantidad-asiento" class="form-label">Seleccione una cantidad:</label>
-                                    <input type="number" class="form-control cantidad-asiento">
-                                    <div id="emailHelp" class="form-text text-danger my-2"></div>
+                                    <input  type="number" class="form-control cantidad-asiento" min="1" step="1">
+                                    <div id="cantidad-help-pref" class="form-text text-danger my-2"></div>
                                     <a href="#" class="btn btn-primary btn-reservar" data-precio="9000" data-nombre="Preferencial">Reservar</a>
 
                                 </div>
@@ -66,9 +60,6 @@
                 </div>
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
-                        </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title fs-3 fw-bold">Asiento VIP</h5>
@@ -78,8 +69,8 @@
                                 <p><small>* Por la compra superior de 5 asientos, obten el 10% de dcto</small></p>
                                 <div class="mb-3">
                                     <label for="cantidad-asiento" class="form-label">Seleccione una cantidad:</label>
-                                    <input type="number" class="form-control cantidad-asiento">
-                                    <div id="emailHelp" class="form-text text-danger my-2"></div>
+                                    <input type="number" class="form-control cantidad-asiento" min="1" step="1">
+                                    <div id="cantidad-help-vip" class="form-text text-danger my-2"></div>
                                     <a href="#" class="btn btn-primary btn-reservar" data-precio="13000" data-nombre="VIP">Reservar</a>
 
                                 </div>
