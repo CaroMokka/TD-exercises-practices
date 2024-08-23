@@ -27,15 +27,16 @@
                             <div class="card-body">
                                 <h5 class="card-title fs-3 fw-bold">Asiento Normal</h5>
                                 <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="my-2 fs-5 fw-bold">Precio $5.000 c/u</div>
+                                    lead-in to additional content.</p>
+                                <div class="my-2 fs-5 fw-bold"  >Precio $5.000 c/u</div>
+                                <p><small>* Por la compra superior de 5 asientos, obten el 10% de dcto</small></p>
                                 <div class="mb-3">
                                     <label for="cantidad-asiento" class="form-label">Seleccione una cantidad:</label>
-                                    <input type="number" class="form-control" id="cantidad-asiento">
-                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                    </div>
+                                    <input type="number" class="form-control cantidad-asiento">
+                                    <div id="emailHelp" class="form-text text-danger my-2"></div>
+                                    <a href="#" class="btn btn-primary btn-reservar" data-precio="5000" data-nombre="Normal">Reservar</a>
+
                                 </div>
-                                <a href="#" class="btn btn-primary">Reservar</a>
                             </div>
                         </div>
                     </div>
@@ -49,15 +50,15 @@
                             <div class="card-body">
                                 <h5 class="card-title fs-3 fw-bold">Asiento Preferencial</h5>
                                 <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="my-2 fs-5 fw-bold">Precio $9.000 c/u</div>
+                                    lead-in to additional content.</p>
+                                <div class="my-2 fs-5 fw-bold" >Precio $9.000 c/u</div>
                                 <div class="mb-3">
                                     <label for="cantidad-asiento" class="form-label">Seleccione una cantidad:</label>
-                                    <input type="number" class="form-control" id="cantidad-asiento">
-                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                    </div>
+                                    <input type="number" class="form-control cantidad-asiento">
+                                    <div id="emailHelp" class="form-text text-danger my-2"></div>
+                                    <a href="#" class="btn btn-primary btn-reservar" data-precio="9000" data-nombre="Preferencial">Reservar</a>
+
                                 </div>
-                                <a href="#" class="btn btn-primary">Reservar</a>
                             </div>
                         </div>
                     </div>
@@ -71,21 +72,35 @@
                             <div class="card-body">
                                 <h5 class="card-title fs-3 fw-bold">Asiento VIP</h5>
                                 <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="my-2 fs-5 fw-bold">Precio $13.000 c/u</div>
+                                    lead-in to additional content.</p>
+                                <div class="my-2 fs-5 fw-bold" >Precio $13.000 c/u</div>
                                 <div class="mb-3">
                                     <label for="cantidad-asiento" class="form-label">Seleccione una cantidad:</label>
-                                    <input type="number" class="form-control" id="cantidad-asiento">
-                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                    </div>
+                                    <input type="number" class="form-control cantidad-asiento">
+                                    <div id="emailHelp" class="form-text text-danger my-2"></div>
+                                    <a href="#" class="btn btn-primary btn-reservar" data-precio="13000" data-nombre="VIP">Reservar</a>
+
                                 </div>
-                                <a href="#" class="btn btn-primary">Reservar</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-6">Mensaje de Reserva</div>
+            <div class="col-6">
+                <h3>Detalle de la reserva</h3>
+                <table class="table table-bordered" id="detalle-reserva">
+                    <thead>
+                        <th>Tipo de asiento</th>
+                        <th>Valor de asiento</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Total</th>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
     <!-- jquery -->

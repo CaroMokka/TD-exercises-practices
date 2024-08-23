@@ -1,5 +1,54 @@
 $(function () {
 
+  function limpiarForm() {
+    $(".cantidadAsiento").html("")
+  }
+
+  function validarForm(cantidadAsientos) {
+    //validacion datos
+
+    if(cantidadAsientos <= 0) {
+      
+      return $("#emailHelp").html("El valor ingresado no es valido")
+    }
+  }
+  function calcularDcto(cantidadAsientos, precioAsiento) {
+    //valor descuento
+    if(cantidadAsientos >= 5) {
+      let valorDcto = (precioAsiento * cantidadAsientos) * 0.1
+      let dctoAplicado = (precioAsiento * cantidadAsientos) - valorDcto
+      console.log(dctoAplicado)
+      return dctoAplicado
+    } else {
+      return (precioAsiento * cantidadAsientos)
+    }
+  }
+  function calcularTotal() {}
+
+  $(".btn-reservar").on("click", function(){
+    let nombreAsiento = $(this).data("nombre");
+    let precioAsiento = $(this).data("precio");
+    console.log(nombreAsiento, precioAsiento)
+    let cantidadAsientos = parseInt($(this).siblings(".cantidad-asiento").val());
+    console.log(cantidadAsientos)
+    validarForm(cantidadAsientos)
+    //limpiarForm()
+    let precioConDcto = calcularDcto(cantidadAsientos, precioAsiento)//me entrega el valor final de la reserva con el dcto incluido
+
+    $("#detalle-reserva tbody").append(`
+      <tr class="">
+        <td>${nombreAsiento}</td>
+        <td>${precioAsiento}</td>
+        <td>${cantidadAsientos}</td>
+        <td>${(cantidadAsientos * precioAsiento)}</td>
+        <td>${precioConDcto}</td>
+      </tr>
+    `);
+
+
+    
+    
+  })
 
 
 
@@ -33,7 +82,8 @@ $(function () {
 
 
 
-  
+
+
   // do {
   //   var tipoAsiento = prompt(
   //     "Seleccione el tipo de asiento: \n 1. Asiento Normal. Valor $5.000 \n 2. Asiento Preferencial. Valor $9.000 \n 3. Asiento VIP. Valor $13.000"
