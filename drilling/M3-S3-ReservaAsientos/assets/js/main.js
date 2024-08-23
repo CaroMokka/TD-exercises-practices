@@ -1,5 +1,8 @@
 $(function () {
 
+  let totales = []
+
+
   function limpiarForm() {
     $(".cantidadAsiento").html("")
   }
@@ -17,23 +20,31 @@ $(function () {
     if(cantidadAsientos >= 5) {
       let valorDcto = (precioAsiento * cantidadAsientos) * 0.1
       let dctoAplicado = (precioAsiento * cantidadAsientos) - valorDcto
-      console.log(dctoAplicado)
       return dctoAplicado
     } else {
       return (precioAsiento * cantidadAsientos)
     }
   }
-  function calcularTotal() {}
+  function calcularTotal(totales) {
+    let precioTotalFinal = 0
+    for(let i = 0; i < totales.length; i++) {
+      precioTotalFinal += totales[i]
+    }
+    return precioTotalFinal
+  }
 
   $(".btn-reservar").on("click", function(){
     let nombreAsiento = $(this).data("nombre");
     let precioAsiento = $(this).data("precio");
-    console.log(nombreAsiento, precioAsiento)
     let cantidadAsientos = parseInt($(this).siblings(".cantidad-asiento").val());
-    console.log(cantidadAsientos)
+    //console.log(cantidadAsientos)
     validarForm(cantidadAsientos)
     //limpiarForm()
     let precioConDcto = calcularDcto(cantidadAsientos, precioAsiento)//me entrega el valor final de la reserva con el dcto incluido
+    totales.push(precioConDcto)
+
+    let precioTotal = calcularTotal(totales)
+    console.log(precioTotal)
 
     $("#detalle-reserva tbody").append(`
       <tr class="">
@@ -43,7 +54,16 @@ $(function () {
         <td>${(cantidadAsientos * precioAsiento)}</td>
         <td>${precioConDcto}</td>
       </tr>
+      <tr class="text-end fs-4 fw-bold">${precioTotal}</tr>
     `);
+    let valorFinalFormateado = new Intl.NumberFormat("es-CL", {
+      style: "currency",
+      currency: "CLP",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+  }).format(precioTotal)
+
+    $("#total-pagar").html(`Total a pagar: ${valorFinalFormateado}`)
 
 
     
