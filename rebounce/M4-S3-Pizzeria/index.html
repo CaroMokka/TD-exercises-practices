@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Buona Pizza</title>
+</head>
+
+<body>
+    <main class="container mt-4">
+        <section class="d-flex">
+            <div class="form-pizza col-6 mx-2">
+
+                <div class="card" style="width: 32rem;">
+                    <h1 class="alert alert-secondary" role="alert">Mejora tu pizza</h1>
+                    <div class="card-body">
+                        <h4 class="card-title my-2">Puedes elegir tres ingredientes gratis. Cada ingrediente adicinnal cuneta
+                            $800 cada uno.</h4>
+                        <h5 class="card-text mt-4">Ingredientes disponibles para agregar a su pizza:</h5>
+                        <div id="ingredientes" class="check-ingrediente d-flex flex-column fs-5"></div>
+                        <h5 class="card-text mt-4">Los ingredientes seleccionados son:</h5>
+                        <div class="seleccionados"></div>
+                        <h5 class="card-text mt-4">Los ingredientes <strong>Extras</strong> seleccionados son:</h5>
+                        <div class="extra-seleccionados"></div>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="resume-pizza col-6 mx-2">
+
+                <div class="card" style="width: 32rem;">
+                    <h1 class="alert alert-secondary" role="alert">Resumen de tu pedido</h1>
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody class="fs-5">
+                                <tr>
+                                    <td colspan="2" >Pizza XL</td>
+                                    <td>$15.000</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Ingredientes Extras</td>
+                                    <td>$0</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Propina</td>
+                                    <td>$0</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" class="form-control" value="1000" id="propina"></td>
+                                    <td><button class="btn btn-secondary w-100" id="btn-enviar">Enviar pedido con
+                                            propina</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <p class="card-text">Pizza XL</p>
+                      <p class="card-text">Los ingredientes seleccionados son:</p>
+                      <p class="card-text">Los ingredientes <strong>Extras</strong> seleccionados son:</p> -->
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- script -->
+    <script src="/rebounce/M4-S3-Pizzeria/script.js"></script>
+</body>
+
+</html>
