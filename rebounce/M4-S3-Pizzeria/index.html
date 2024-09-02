@@ -18,14 +18,14 @@
                 <div class="card" style="width: 32rem;">
                     <h1 class="alert alert-secondary" role="alert">Mejora tu pizza</h1>
                     <div class="card-body">
-                        <h4 class="card-title my-2">Puedes elegir tres ingredientes gratis. Cada ingrediente adicinnal cuneta
+                        <h4 class="card-title my-2 fw-bold">Puedes elegir tres ingredientes gratis. Cada ingrediente adicinnal cuneta
                             $800 cada uno.</h4>
-                        <h5 class="card-text mt-4">Ingredientes disponibles para agregar a su pizza:</h5>
-                        <div id="ingredientes" class="check-ingrediente d-flex flex-column fs-5"></div>
-                        <h5 class="card-text mt-4">Los ingredientes seleccionados son:</h5>
-                        <div class="seleccionados"></div>
-                        <h5 class="card-text mt-4">Los ingredientes <strong>Extras</strong> seleccionados son:</h5>
-                        <div class="extra-seleccionados"></div>
+                        <h5 class="card-text mt-4 fw-bold">Ingredientes disponibles para agregar a su pizza:</h5>
+                        <div id="ingredientes" class="d-flex flex-column fs-5"></div>
+                        <h5 class="card-text mt-4 fw-bold">Los ingredientes seleccionados son:</h5>
+                        <div id="seleccionados" class="seleccionados"></div>
+                        <h5 class="card-text mt-4 fw-bold">Los ingredientes <strong>Extras</strong> seleccionados son:</h5>
+                        <div id="extra-seleccionados" class="extra-seleccionados"></div>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
@@ -35,19 +35,19 @@
                 <div class="card" style="width: 32rem;">
                     <h1 class="alert alert-secondary" role="alert">Resumen de tu pedido</h1>
                     <div class="card-body">
-                        <table class="table">
+                        <table id="resumen-compra" class="table">
                             <tbody class="fs-5">
                                 <tr>
                                     <td colspan="2" >Pizza XL</td>
-                                    <td>$15.000</td>
+                                    <td id="valor-pizzaxl" data-pizza="15000">$15.000</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">Ingredientes Extras</td>
-                                    <td>$0</td>
+                                    <td id="valorExtra" >$0</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">Propina</td>
-                                    <td>$0</td>
+                                    <td id="valor-propina" >$0</td>
                                 </tr>
                                 <tr>
                                     <td><input type="number" class="form-control" value="1000" id="propina"></td>
