@@ -19,28 +19,32 @@
             </div>
             <div class="contenido-bebidas p-4">
                 <div class="form-check d-flex flex-start border">
-                    <input class="form-check-input  me-2" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input me-2 checked" type="checkbox" value="Martini" data-precio="2550" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Martini
                     </label>
+                    <span style="margin-left: auto;" >$2.550</span>
                 </div>
                 <div class="form-check d-flex flex-start border">
-                    <input class="form-check-input  me-2" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input me-2 checked" type="checkbox" value="Capuccino" data-precio="1370" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Capuccino
                     </label>
+                    <span style="margin-left: auto;" >$1.370</span>
                 </div>
                 <div class="form-check d-flex flex-start border">
-                    <input class="form-check-input  me-2" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input me-2 checked" type="checkbox" value="Latte" data-precio="1350" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Latte
                     </label>
+                    <span style="margin-left: auto;" >$1.350</span>
                 </div>
                 <div class="form-check d-flex flex-start border">
-                    <input class="form-check-input  me-2" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input me-2 checked" type="checkbox" value="Mojito" data-precio="2290" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Mojito
                     </label>
+                    <span style="margin-left: auto;" >$2.290</span>
                 </div>
             </div>
         </section>
@@ -49,9 +53,9 @@
                 <h3>Menú</h3>
                 <p>Disfruta de la mejor comida Italiana.</p>
             </div>
-            <div class="contenido-menu">
+            <form class="form contenido-menu">
                 <div class="form-check d-flex flex-start flex-column border">
-                    <input class="form-check-input m-1" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input checked m-1" type="checkbox" value="Ensalada de Risso" data-precio="6750" id="flexCheckDefault">
                     <label class="form-check-label my-2 fw-bold" for="flexCheckDefault">
                         Ensalada de Risso
                     </label>
@@ -65,7 +69,7 @@
                     <p>$6.750</p>
                 </div>
                 <div class="form-check d-flex flex-start flex-column border">
-                    <input class="form-check-input m-1" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input checked m-1" type="checkbox" value="Ensalada al Cipollotti" data-precio="5990" id="flexCheckDefault">
                     <label class="form-check-label my-2 fw-bold" for="flexCheckDefault">
                         Ensalada al Cipollotti
                     </label>
@@ -79,7 +83,7 @@
                     <p>$5.990</p>
                 </div>
                 <div class="form-check d-flex flex-start flex-column border">
-                    <input class="form-check-input m-1" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input checked m-1" type="checkbox" value="Ensalada Capresse" data-precio="8250" id="flexCheckDefault">
                     <label class="form-check-label my-2 fw-bold" for="flexCheckDefault">
                         Ensalada Capresse
                     </label>
@@ -92,31 +96,28 @@
                     </div>
                     <p>$8.250</p>
                 </div>
-            </div>
+            </form>
         </section>
         <section class="card mt-4 cuenta p-3" style="width: 32rem;">
             <div class="my-2">
                 <h3>Cuenta</h3>
                 <p>Esperamos que disfrute de su comida. Ciao!</p>
             </div>
-            <div class="my-2">
-                <table class="table">
+            <div class="my-2 d-flex flex-column-reverse">
+                <table id="pedido" class="table">
                     <thead>
                       <tr>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Precio</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Mark</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <td>Jacob</td>
-                        <td>@fat</td>
-                      </tr>
+                    
                     </tbody>
+                    <div class="total-pedido d-flex">
+                        <span><strong>Total</strong></span>
+                        <span id="total-pedido" class="ms-auto fw-bold"></span>
+                    </div>
                   </table>
             </div>
         </section>
