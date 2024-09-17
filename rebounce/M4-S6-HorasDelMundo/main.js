@@ -1,9 +1,13 @@
 import ciudades from "./data.js";
 
 $(() => {
+  let id_interval;
   function mostrarHoraCiudad(ciudad) {
     horaEnDirecto(ciudad);
-    //setInterval(() => horaEnDirecto(ciudad), 1000)
+    if(id_interval){
+      clearInterval(id_interval)
+    }
+    id_interval =  setInterval(() => horaEnDirecto(ciudad), 1000)
   }
 
   function horaEnDirecto(ciudad) {
@@ -17,7 +21,7 @@ $(() => {
   }
 
   function mostrarRelojes(nombreCiudad, horaCiudad) {
-    $("#relojes").html();
+    $("#relojes").html("");
 
     $("#relojes").append(`
       <p>${horaCiudad}</p>
