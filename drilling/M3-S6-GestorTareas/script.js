@@ -20,12 +20,6 @@ function isActive(list) {
   });
 }
 
-// function filterTasks(list) {
-//     const listFiltered = list.filter((task) => {
-//         task.state_task === "Completado"
-//     })
-//     console.log("Lista filtrada", listFiltered)
-// }
 function quantityTasks(list) {
   //$("#total_tasks").html("")
   let suma = 0;
@@ -42,21 +36,27 @@ $(() => {
   function listTasks(listado) {
     $("#display_tasks").html("");
     for (const task of listado) {
-      $("#display_tasks").append(`
+      if (task.state_task) {
+        $("#display_tasks").append(`
+            <div class="col-12 d-flex">
+                <div class="col-9 d-flex" >
+                  <input class="form-check-input me-2 checked" type="checkbox" id="task_state" checked></input>
+                  <label for="flexCheckDefault" class="form-label d-flex text-decoration-line-through">${task.name_task}</label>
+                </div>
+                <div class="col-3 text-center fw-bold text-success">Completada</div>
+            </div>
+        `);
+      } else {
+        $("#display_tasks").append(`
             <div class="col-12 d-flex">
                 <div class="col-9 d-flex" >
                   <input class="form-check-input me-2 checked" type="checkbox" id="task_state"></input>
-                  <label for="flexCheckDefault" class="form-label d-flex">${
-                    task.name_task
-                  }</label>
+                  <label for="flexCheckDefault" class="form-label d-flex">${task.name_task}</label>
                 </div>
-             
-                  <div class="col-3 text-center fw-bold completed">${
-                    task.state_task ? "" : "Pendiente"
-                  }</div>
-           
+                <div class="col-3 text-center fw-bold text-danger">Pendiente</div>
             </div>
         `);
+      }
     }
   }
 
@@ -64,18 +64,28 @@ $(() => {
     e.preventDefault();
 
     let nameTask = $("#add_task").val();
-    let statusTask = $("#add_status").val()
-    console.log("status", statusTask)
-
+    let statusTask = document.getElementById("add_status");
     if (nameTask == "") {
       return alert("Ingrese una tarea");
     }
+    if (statusTask.checked) {
+      console.log("Check esta marcado");
+      const task = new Task(nameTask, true);
+      listado.push(task);
+      listTasks(listado);
+      return task;
+    } else {
+      console.log("check esta desmarcado");
+      const task = new Task(nameTask, false);
+      listado.push(task);
+      listTasks(listado);
+      return task;
+    }
 
-    const task = new Task(nameTask, false);
-    listado.push(task);
-    listTasks(listado);
     //isActive(listado)
     //filterTasks(listado)
     //quantityTasks(listado)
   });
 });
+
+
