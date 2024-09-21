@@ -8,6 +8,16 @@
 </head>
 <body>
     <h2>Biblioteca</h2>
+    <form id="form-book" class="row g-3">
+        <div class="col-auto">
+          <label for="input-value" class="visually-hidden">Buscar libro</label>
+          <input id="input-value" type="text" class="form-control-plaintext"  value="">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+        </div>
+      </form>
+      <div id="book-filtered" ></div>
     <script type="module" src="./script.js" ></script>
     <script type="module" src="./data.js" ></script>
 </body>
