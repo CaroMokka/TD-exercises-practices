@@ -11,7 +11,9 @@ window.onload = () => {
     const showFormatedBook = () => {
         books.map((item) => {
             for(const clave in item ){
-                item[clave] = item[clave].replaceAll("."," ").replaceAll(" ", "_").toLowerCase()           
+                item[clave] ??= "No especifica"
+                item[clave] = item[clave].replaceAll("."," ").replaceAll(" ", "_").toLowerCase()  
+                console.log(item[clave])         
             }
             const book = new Book(item.title, item.autor, item.date_published)
             newbooks.push(book)

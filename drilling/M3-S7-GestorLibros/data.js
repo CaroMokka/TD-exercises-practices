@@ -5,10 +5,11 @@ const books = [
         date_published: "2012"
     },
     {
-        title: "Arte y percepción visual: Psicología del ojo creador",
+        title: undefined,
         autor: "Rudolf Arnheim",
         date_published: "1954"
     },
+    //"Arte y percepción visual: Psicología del ojo creador"
     {
         title: "¿Qué estás mirando?",
         autor: "Will Gompertz",
