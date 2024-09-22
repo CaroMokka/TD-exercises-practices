@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>M3-S8 Reserva tu hora</title>
 </head>
+
 <body>
-    <h2>Datos Únicos y Objetos Útiles de ES6</h2>
+    <main class="container d-flex flex-column align-items-center mt-3" >
+        <h2 class="mb-3" >Datos Únicos y Objetos Útiles de ES6</h2>
+        <section class="card" style="width: 28rem;">
+            <h2 class="m-3" >Reserva tu hora</h2>
+            <form id="form-reserva-hora">
+                <div class="d-flex" >
+                    <div class="m-3">
+                        <label for="txt-name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="txt-name" aria-describedby="txt-name-help">
+                        <div id="txt-name-help" class="form-text">Ingrese sus datos</div>
+                    </div>
+                    <div class="m-3">
+                        <label for="txt-lastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="txt-lastName" aria-describedby="text-email-help">
+                        <div id="text-email-help" class="form-text">Ingrese sus datos</div>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <label for="txt-email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="txt-email" aria-describedby="text-lastName-help">
+                    <div id="text-lastName-help" class="form-text">Ingrese sus datos</div>
+                </div>
+                <div class="m-3">
+                    <label for="txt-age" class="form-label">Edad</label>
+                    <input type="text" class="form-control" id="txt-age" aria-describedby="text-email-help">
+                    <div id="text-email-help" class="form-text">Ingrese sus datos</div>
+                </div>
+                <div class="m-3">
+                    <label for="txt-date" class="form-label">Edad</label>
+                    <input type="date" class="form-control" id="txt-date" aria-describedby="text-date-help">
+                    <div id="text-date-help" class="form-text">Ingrese sus datos</div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary m-3">Reservar</button>
+            </form>
+        </section>
+    </main>
 </body>
-<script src="./script.js" ></script>
+<script src="./script.js"></script>
+
 </html>

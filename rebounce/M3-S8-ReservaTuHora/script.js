@@ -1,30 +1,50 @@
 class Reserva {
-    constructor(name, age){
-        this.name = name
-        this.age = age
-    }
+  constructor(name, lastName, email, age, date) {
+    this.name = name;
+    this.last_name = lastName
+    this.email = email
+    this.age = age
+    this.date = date
+  }
 }
 window.onload = () => {
-    const reserva = new Reserva("Carolina", 17)
+  let form = document.getElementById("form-reserva-hora");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let user_name = document.getElementById("txt-name").value;
+    let user_lastName = document.getElementById("txt-lastName").value;
+    let user_email = document.getElementById("txt-email").value;
+    let user_age = document.getElementById("txt-age").value;
+    let user_date_hour = document.getElementById("txt-date").value; //solo me trae la fecha
+   
 
+    const reserva = new Reserva(user_name, user_lastName, user_email, user_age, user_date_hour);
+    console.log("reserva", reserva);
+    wrapperProxy(reserva);
+  });
+  
+
+  const wrapperProxy = (reserva) => {
     const proxy = new Proxy(reserva, {
-        get(target, prop) {
-            if(!(prop in target)) return `La propiedad "${prop}" no existe en el objeto.`
-            if(prop === "age") {
-                if(target[prop] > 18){
-                    return `Usted tiene ${target[prop]} años, es mayor de edad.`
-                } else {
-                    alert(`Usted tiene ${target[prop]} años, es menor de edad.`)
-                    return target[prop]
-                }
-            } 
-            return target[prop]
+      get(target, prop) {
+        if (!(prop in target))
+          return `La propiedad "${prop}" no existe en el objeto.`;
+        if (prop === "age") {
+          if (target[prop] > 18) {
+            return `Usted tiene ${target[prop]} años, es mayor de edad.`;
+          } else {
+            alert(`Usted tiene ${target[prop]} años, es menor de edad.`);
+            return target[prop];
+          }
         }
-    })
-    console.log("reserva", reserva)
-    console.log(proxy.name)
-    console.log(proxy.work)
-    console.log(proxy.age)
+        return target[prop];
+      },
+    });
+    console.log(proxy.name);
+    console.log(proxy.work);
+    console.log(proxy.age);
+  };
+ 
 
-    //falta comprender Proxy en JS
-}
+  //falta comprender Proxy en JS
+};
