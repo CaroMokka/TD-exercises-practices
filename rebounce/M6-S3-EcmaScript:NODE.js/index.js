@@ -97,21 +97,98 @@ Crear una función similar a la del ejercicio, utilizando esta vez un objeto con
 que contenga, al menos, cinco pares de llave - valor. Utilizar template literals para escribir un texto empleando 
 los valores del objeto, y Destructuring para definir los valores del objeto dentro de la función. 
 */
-const animal = {
-  especie: "Perro",
-  raza: "Pastor Alemán",
-  color: "Negro",
-  edad: 4,
-  tamanio: "Grande",
-};
+// const animal = {
+//   especie: "Perro",
+//   raza: "Pastor Alemán",
+//   color: "Negro",
+//   edad: 4,
+//   tamanio: "Grande",
+// };
 
-const datosAnimal = ({ especie, raza, color }) => {
-  return {
-    especie, 
-    raza, 
-    color,
-    descripción: `Especie: ${especie}, Raza: ${raza}, Color: ${color}` 
-  }
-};
+// const datosAnimal = ({ especie, raza, color }) => {
+//   return {
+//     especie,
+//     raza,
+//     color,
+//     descripción: `Especie: ${especie}, Raza: ${raza}, Color: ${color}`
+//   }
+// };
 
-console.log(datosAnimal(animal));
+// console.log(datosAnimal(animal));
+
+/* ----------------------------------------------------------------------------------------- */
+//REQUERIMIENTO 4
+/*
+Tomar el objeto creado con anterioridad, y crear una copia actualizada usando el spread operator; 
+actualizar dos campos, y añadir dos nuevos. 
+*/
+
+// const animal = {
+//   especie: "Perro",
+//   raza: "Pastor Alemán",
+//   color: "Negro",
+//   edad: 4,
+//   tamanio: "Grande",
+// };
+
+// const datosAdicionales = {
+//   vacunado: true,
+//   entrenado: false,
+//   color: "Marrón"
+// };
+//Operador de propagación - El orden como se alique el operador de propagación es relevante
+//   console.log({ ...animal, ...datosAdicionales })
+//   console.log({ ...datosAdicionales, ...animal })
+
+//Ejemplo de clonación sin referencia
+//const animalCopia = JSON.parse(JSON.stringify(animal)) //tradicional
+//const animalCopia = { ...animal }; //moderna
+//Solución 1
+//const animalCopia = { ...animal, ...datosAdicionales }
+//Solución 2
+// const animalCopia = {
+//     ...animal,
+//     vacunado: true,
+//   entrenado: false,
+//   color: "Marrón"
+// }
+// console.log(animalCopia);
+// console.log(animal)
+
+/* ----------------------------------------------------------------------------------------- */
+//REQUERIMIENTO 5
+/*
+Obtener las propiedades del objeto en un Array, utilizando el método Object.values(), 
+y luego usar un ciclo for of para mostrar por pantalla todos los ítems del Array. 
+*/
+// const auto = {
+//     modelo: "suv",
+//     marca: "Jetour",
+//     color: "azul",
+//     puertas: 5,
+//     asientos: 7,   
+// }
+
+//console.log(Object.keys(auto))
+
+//Ciclo que muestra las llaves (keys) - Recorre las llaves de un array
+// for(const key of Object.keys(auto)){
+//     console.log(key)
+// }
+//Ciclo que muestra los valores (values)
+// for(const value of Object.values(auto)){
+//     console.log(value)
+// }
+//Recorrer las llaves del objeto
+// for(const key in auto){
+//     console.log(key)
+// }
+//Ciclo que muestra la llaves y sus valores
+// for(const element of Object.entries(auto)){
+//     console.log(element)
+// }
+
+//Rest operator - Para quitar llave-valor de un objeto
+// console.log(auto)
+// const { modelo, puertas,  ...resultado }  = auto
+// console.log(resultado)
